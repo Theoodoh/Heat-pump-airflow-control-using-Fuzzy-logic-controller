@@ -1,0 +1,44 @@
+[System]
+Name='Temp'
+Type='mamdani'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=6
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='air_flow'
+Range=[0 33]
+NumMFs=7
+MF1='EL':'trapmf',[0 0 4.4 8.8]
+MF2='VL':'trimf',[4.4 8.8 13.2]
+MF3='L':'trimf',[8.8 13.2 17.6]
+MF4='N':'trimf',[13.2 17.6 22]
+MF5='H':'trimf',[17.6 22 26.4]
+MF6='VH':'trimf',[22 26.4 30.8]
+MF7='EH':'trapmf',[26.4 30.8 35.2 35.2]
+
+[Output1]
+Name='air_flow_temperature'
+Range=[42 133.5]
+NumMFs=7
+MF1='EL':'trapmf',[42 42 50.33 66.96]
+MF2='VL':'trimf',[50.33 66.96 75.3]
+MF3='L':'trimf',[66.96 75.3 83.57]
+MF4='N':'trimf',[75.3 83.57 91.93]
+MF5='H':'trimf',[83.57 91.93 100.2]
+MF6='VH':'trimf',[91.93 100.2 108.4]
+MF7='EH':'trapmf',[100.2 108.4 116.8 133.5]
+
+[Rules]
+1, 1 (1) : 1
+2, 2 (1) : 1
+3, 3 (1) : 1
+4, 4 (1) : 1
+5, 5 (1) : 1
+7, 7 (1) : 1
